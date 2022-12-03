@@ -1,0 +1,141 @@
+body {
+    margin: 15px;
+    height: auto;
+    width: 350px;
+}
+
+#blocked-sites-list {
+    border: solid;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul {
+    margin: 0;
+    padding: 0;
+}
+  
+  /* Style the list items */
+  ul li {
+    list-style-type: none;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+  
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Set all odd list items to a different color (zebra-stripes) */
+  ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+  
+  /* Darker background-color on hover */
+  ul li:hover {
+    background: #ddd;
+  }
+  
+  /* Style the close button */
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+  
+  .close:hover {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  /* Style the header */
+  .header {
+    background-color: #f44336;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Clear floats after the header */
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the input */
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+  }
+
+  input[type="number"] {
+    margin: 0px 10px 0px 10px;
+    border: solid;
+    width: 70px;
+    padding: 0 0 0 5px;
+  }
+  
+  /* Style the "Add" button */
+  #addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+  #addBtn:hover {
+    background-color: #bbb;
+  }
+
+  #set-minutes {
+    margin: 20px 0 20px 0;
+    display: flex;
+    
+  }
+
+  #set-minutes h1 {
+    align-self: flex-end;
+    bottom: 0px;
+    margin: 0;
+  }
+
+  #start-block {
+    border: none;
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #F44336;
+  }
+
+  #start-block h1 {
+    letter-spacing: 1px;
+    color: white;
+    margin: 0;
+  }
+
+  #start-block:hover {
+    background: #e0483d;
+    cursor: pointer;
+  }

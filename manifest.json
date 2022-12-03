@@ -1,0 +1,30 @@
+{
+    "name": "Weblocker",
+    "description": "Had to make this because I keep getting distracted, and all the other existing tools cost $$$.",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "author": "brianandwilliams.com",
+    "icons": { "16": "assets/YTExtLogo16.png",
+           "48": "assets/YTExtLogo48.png",
+          "128": "assets/YTExtLogo128.png" },
+    "action": {
+      "default_title": "execute.js will run (watch the Chrome DevTools' console)",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "js": ["content.js"],
+  
+        "matches": ["<all_urls>"]
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "permissions": [
+      "tabs",
+      "scripting",
+      "storage"
+    ]
+    
+  }
