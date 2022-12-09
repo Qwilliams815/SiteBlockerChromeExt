@@ -1,0 +1,21 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(204deg, rgba(0,0,0,1) 22%, rgba(87,72,72,1) 100%);
+}
+
+h1 {
+    font-size: 100px;
+    color: white;
+    text-shadow: 0px 0px 5px;
+}
+
+

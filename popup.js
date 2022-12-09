@@ -56,7 +56,7 @@ function addElement(userInput) {
 
 		// Remove element from back-end
 		blockedSitesArr.splice(blockedSitesArr.indexOf(div.childNodes[0].nodeValue), 1);
-		console.log(blockedSitesArr);
+		// console.log(blockedSitesArr);
 
 		// Clear and reorder local storage
 		localStorage.clear();

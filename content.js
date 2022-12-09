@@ -1,32 +1,21 @@
 console.log("~ Weblocker Ext Loaded ~");
 
-// Generates HTML to replace a blocked sites content
+// Replaces webpage with an iframe displaying blocked_page.html
 function generateBlockedPage() {
+	// Eliminate any existing doc styles that may interfere with iframes.
+	document.querySelector("html").setAttribute("style", "none");
+	document.querySelector("html").style.cssText = "overflow: hidden;";
+
 	const newBody = document.createElement("body");
-	const centerDiv = document.createElement("div");
-	const header = document.createElement("h1");
-	const footer = document.createElement("h2");
-
-	const headerTag = document.createElement("h1");
-	const headerText = "Site Blocked";
-	const footerTag = document.createElement("h2");
-	const footerText = "Stay focused, King, you got this.";
-
-	headerTag.append(headerText);
-	header.append(headerTag);
-	footerTag.append(footerText);
-	footer.append(footerTag);
-
-	centerDiv.append(headerTag);
-	centerDiv.append(footerTag);
-	newBody.append(centerDiv);
+	const iframe = document.createElement("iframe");
 
 	newBody.style.cssText =
-		"font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 0; color: #F2E9E4; background: radial-gradient(50% 50% at 50% 50%, rgba(74, 78, 105, 0.98) 0%, #43475F 100%); display: flex; justify-content: center; align-items: center; height: 100vh";
-	centerDiv.style.cssText =
-		"font-size: 5vh; width: 75vw; display: flex; flex-direction: column; justify-content: center; align-items: center;";
+		"height: 100vh; width: 100vw; margin: 0px; overflow: hidden; box-sizing: border-box;";
+	iframe.style.cssText =
+		"height: 100vh; width: 100vw; margin: 0px; overflow: hidden; border: none;";
+	iframe.src = chrome.runtime.getURL("blocked_page.html"); //add your iframe path here
 
-	document.getElementsByTagName("body")[0] = newBody;
+	newBody.append(iframe);
 	document.body = newBody;
 }
 
@@ -55,7 +44,7 @@ chrome.runtime.onMessage.addListener(function (request) {
 // Block any pre-existing sites in local storage
 chrome.storage.local.get(blockedSitesObj).then((result) => {
 	for (let item of result.blockedSitesList) {
-		console.log(item);
+		// console.log(item);
 		if (document.URL.includes(item.toLowerCase())) {
 			generateBlockedPage();
 		}
