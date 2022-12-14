@@ -13,7 +13,7 @@ function generateBlockedPage() {
 		"height: 100vh; width: 100vw; margin: 0px; overflow: hidden; box-sizing: border-box;";
 	iframe.style.cssText =
 		"height: 100vh; width: 100vw; margin: 0px; overflow: hidden; border: none;";
-	iframe.src = chrome.runtime.getURL("blocked_page.html"); //add your iframe path here
+	iframe.src = chrome.runtime.getURL("blocked_page.html");
 
 	newBody.append(iframe);
 	document.body = newBody;
