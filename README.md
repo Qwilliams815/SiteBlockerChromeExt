@@ -10,3 +10,4 @@ I created this extension to help me focus on building my other extension (Web Ac
 - Chrome extension file structure/ environments
 - Chrome.storage API VS localStorage
 - Content stylesheet injection
+- Independant modal styling using iframes
